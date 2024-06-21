@@ -19,8 +19,7 @@ public class UsuarioController {
     @PostMapping("/login")
     public GenericResponse<Usuario> login(HttpServletRequest request){
         String email = request.getParameter("email");
-        String clave = request.getParameter("clave");
-        System.out.println(clave);
+        String clave = request.getParameter("pass");
         return this.usuarioService.login(email, clave);
     }
 
