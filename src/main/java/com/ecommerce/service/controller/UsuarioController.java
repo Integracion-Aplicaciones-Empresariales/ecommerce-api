@@ -4,10 +4,7 @@ import com.ecommerce.service.entity.Usuario;
 import com.ecommerce.service.service.UsuarioService;
 import com.ecommerce.service.utility.GenericResponse;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/usuario")
@@ -25,6 +22,15 @@ public class UsuarioController {
         String clave = request.getParameter("clave");
         System.out.println(clave);
         return this.usuarioService.login(email, clave);
+    }
+
+    @PostMapping
+    public GenericResponse<?> save(@RequestBody Usuario u){
+        return this.usuarioService.guardarUsuario(u);
+    }
+    @PutMapping("/{id}")
+    public GenericResponse<?> update(@PathVariable int id, @RequestBody Usuario u){
+        return this.usuarioService.guardarUsuario(u);
     }
 
 }
