@@ -23,6 +23,6 @@ public class ProductoService {
     }
 
     public GenericResponse<?> obtenerStock(int id){
-        return new GenericResponse<>(TIPO_DATA,RPTA_OK,OPERACION_CORRECTA, this.repository.obtenerStockRepo(id).getStock());
+        return new GenericResponse<>(TIPO_DATA,RPTA_OK,OPERACION_CORRECTA, this.repository.obtenerStockRepo(id));
     }
 }
