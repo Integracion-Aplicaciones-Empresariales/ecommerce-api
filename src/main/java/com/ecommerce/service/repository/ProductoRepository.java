@@ -19,4 +19,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Integer> {
     @Modifying
     @Query("UPDATE Producto P SET P.stock= P.stock+:cant WHERE P.id=:id")
     void aumentarStock(int cant, int id);
+
+    @Query("SELECT P FROM Producto P WHERE P.id=:idstock")
+    Producto obtenerStockRepo(int idstock);
 }
