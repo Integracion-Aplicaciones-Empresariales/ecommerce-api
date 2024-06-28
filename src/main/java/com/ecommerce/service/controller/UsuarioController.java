@@ -5,6 +5,7 @@ import com.ecommerce.service.service.EmailSenderService;
 import com.ecommerce.service.service.UsuarioService;
 import com.ecommerce.service.utility.GenericResponse;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
-
+    @Autowired
     private EmailSenderService emailSenderService;
 
     public UsuarioController(UsuarioService usuarioService) {
