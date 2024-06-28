@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="railway@monorail.proxy.rlwy.net" uuid="554e2410-de8f-4a6e-92b6-bddf86f3738b">
+    <data-source source="LOCAL" name="railway@monorail.proxy.rlwy.net" uuid="3837a25d-72b7-4c65-812d-0153cfe32ea1">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

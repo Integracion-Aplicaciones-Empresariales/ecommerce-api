@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
-    @Autowired
-    private EmailSenderService emailSenderService;
+    private final EmailSenderService emailSenderService;
 
-    public UsuarioController(UsuarioService usuarioService) {
+    public UsuarioController(UsuarioService usuarioService, EmailSenderService emailSenderService) {
         this.usuarioService = usuarioService;
+        this.emailSenderService = emailSenderService;
     }
 
     @PostMapping("/login")
@@ -29,7 +29,6 @@ public class UsuarioController {
 
     @PostMapping
     public GenericResponse<?> save(@RequestBody Usuario u){
-        System.out.println(u);
         emailSenderService.sendEmail(u.getEmail(),"Bienvenido a El Mana", "¡Hola!\n" +
                 "\n" +
                 "¡Nos alegra saber que planeas visitarnos en Panadería El Maná! En nuestra panadería, nos dedicamos a ofrecerte los panes y postres más frescos y deliciosos, elaborados con ingredientes de la más alta calidad. Desde croissants y baguettes crujientes hasta pasteles y galletas irresistibles, tenemos algo para satisfacer todos tus antojos.\n" +
@@ -39,6 +38,7 @@ public class UsuarioController {
                 "Estamos ansiosos por darte la bienvenida y hacer de tu visita una experiencia deliciosa.\n" +
                 "\n" +
                 "¡Te esperamos pronto!");
+        System.out.println(u);
         return this.usuarioService.guardarUsuario(u);
     }
     @PutMapping("/{id}")

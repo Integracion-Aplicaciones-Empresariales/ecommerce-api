@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-21T01:04:33-0500",
-    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
+    date = "2024-06-28T13:23:18-0500",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 22 (Oracle Corporation)"
 )
 @Component
 public class DocumentoAlmacenadoMapperImpl implements DocumentoAlmacenadoMapper {

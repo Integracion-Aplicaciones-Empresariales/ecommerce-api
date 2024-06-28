@@ -15,7 +15,7 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(length = 20, nullable = false, unique = true)
+    @Column(length = 30, nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false, length = 16)
