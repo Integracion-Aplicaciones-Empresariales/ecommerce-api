@@ -7,5 +7,4 @@ public class CategoriaFilter {
     private String nombre;
     private String verInactivos;
 
-
 }

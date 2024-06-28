@@ -14,14 +14,21 @@ public class DetallePedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(length = 10, nullable = false)
+    @Column
     private int cantidad;
-    @Column(length = 10, nullable = false)
+    @Column
     private Double precio;
-    @OneToOne
+    @ManyToOne
     private Producto producto;
-    @OneToOne
+    @ManyToOne
     private Pedido pedido;
+
+    public String getNombre(){
+        return this.producto!= null ? this.producto.getNombre() : "----";
+    }
+    public Double getSubTotal(){
+        return this.cantidad * this.precio;
+    }
 
 
 }

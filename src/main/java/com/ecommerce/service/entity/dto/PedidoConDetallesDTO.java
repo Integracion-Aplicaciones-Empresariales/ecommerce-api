@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 @Data
 public class PedidoConDetallesDTO {
+
     private Pedido pedido;
     private Iterable<DetallePedido> detallePedido;
 
